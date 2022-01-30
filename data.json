@@ -1,0 +1,22 @@
+[
+    {
+        "name": "egg",
+        "price": 100,
+        "day": 30
+    },
+    {
+        "name": "sousage",
+        "price": 300,
+        "day": 10
+    },
+    {
+        "name": "yoghout",
+        "price": 150,
+        "day": 20
+    },
+    {
+        "name": "cheese",
+        "price": 70,
+        "day": 15
+    }
+]

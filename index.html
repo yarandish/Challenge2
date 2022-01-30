@@ -1,0 +1,105 @@
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Sub Form Example</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="lib/table/bootstrapTable/css/bootstrap-table.min.css">
+
+    <script src="lib/jquery/jquery-3.6.0.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/table/bootstrapTable/js/bootstrap-table.min.js"></script>
+
+    <script>
+
+        window.keeper = null;
+
+
+
+
+
+        function callForm2() {
+
+            window.keeper = window.document.body;
+
+            $("body").load(
+                "Form2.html"
+            );
+
+        }            
+
+
+
+
+        function closeForm2() {
+
+            window.document.body = window.keeper;
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+    <div id="Page">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <input id="mainForm_input2" class="form-control" type="text" name="mainForm_input2" value="my name in MainForm">
+                    <input id="mainForm_input3" class="form-control" type="text" name="mainForm_input2" value="my family in MainForm">
+
+                    <button formcall="multiForms_Form1" class="btn btn-primary" type="button" onclick="callForm2();">Call Form 2</button>
+                </div>
+            </div>
+        </div>
+
+        <table 
+            id="table1"
+            data-toggle="table"
+            data-buttons-class="outline-secondary"
+            data-classes="table table-striped table-hover table-bordered"
+            data-toolbar=".toolbar" data-maintain-meta-data="true" tabindex="-1"
+            data-click-to-select="true"
+            data-multiple-select-row="true"
+            fromnexttable
+            >
+            <thead>
+                <tr>
+                    <th data-checkbox="true"></th>
+                    <th data-field="name">name</th>
+                    <th data-field="price">price</th>
+                    <th data-field="day">day</th>
+                </tr>
+            </thead>
+        </table>
+
+        <button class="btn btn-primary" onclick="addRowToTable1();">Add a Row</button>
+
+        <script>
+            function addRowToTable1() {
+
+                var rows = [];
+        
+                rows.push({
+                    day: 11,
+                    name: 'name11',
+                    price: '$11'
+                });
+        
+                $("#table1").bootstrapTable('append', rows);
+                $("#table1").bootstrapTable('scrollTo', 'bottom');
+            }
+        </script>
+
+        <script>
+            $("#table1").bootstrapTable();
+        </script>
+  
+    </div>
+</body>
+</html>

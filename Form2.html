@@ -1,0 +1,43 @@
+<script>
+
+    function addRowToTable2() {
+
+        var rows = [];
+
+        rows.push({
+            day: 22,
+            name: 'name22',
+            price: '$22'
+        });
+
+        $("#table2").bootstrapTable('append', rows);
+        $("#table2").bootstrapTable('scrollTo', 'bottom');
+    }
+
+</script>
+
+<table 
+    id="table2"
+    data-toggle="table"
+    data-url="data.json"
+    data-buttons-class="outline-secondary"
+    data-classes="table table-striped table-hover table-bordered"
+    data-toolbar=".toolbar" data-maintain-meta-data="true" tabindex="-1"
+    data-click-to-select="true"
+    data-multiple-select-row="true"
+    >
+    <thead>
+        <tr>
+            <th data-checkbox="true"></th>
+            <th data-field="name">name</th>
+            <th data-field="price">price</th>
+            <th data-field="day">day</th>
+        </tr>
+    </thead>
+</table>
+<button class="btn btn-primary" onclick="addRowToTable2();">Add a Row</button>
+<button class="form-control btn btn-danger" type="button" onclick="closeForm2();">Close</button>
+
+<script>
+    $("#table2").bootstrapTable();
+</script>
